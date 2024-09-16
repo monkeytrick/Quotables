@@ -107,58 +107,5 @@ function url_call(String $query, $search_params) {
         //Re-set session variables if player wants more than seven attempts
     }
 }
-
-// In the end, could not use the image function as wikimedia returns a list of available
-// images and their urls, none of which uses a standard naming convention, making it impossible
-// to dynamically select an appropriate image
-
-// function get_imgs($params) {
-
-//     // var_dump("Interior params are ", $params);
-
-//     $urls = [];
-
-//     //for params length 
-//     foreach ($params as $person) {
-
-
-//         print_r("person is ", $person);
-
-//         $browser = new HttpBrowser(HttpClient::create());
-//         $browser->request('GET', "https://commons.wikimedia.org/w/api.php?action=query&titles=File:$person.jpg&prop=imageinfo&iiprop=url&iiurlwidth=300&iiurlheight=300&format=json");
-        
-//         $response_HTML = $browser->getResponse()->getContent();
-
-//         // convert to associative array. 'true' means data is converted to array, not class
-//         $data = json_decode($response_HTML, true);
-
-//         //convert to array that has ordinal values - need this as nested page number is dynamic so cannot
-//         // access through assocative value; it will be unknown
-//                 // An interesting lesson - when using associatve arrays, cannot acces values through orindals, eg. [0],
-//         // can only use key.
-//         $conv_data = array_values($data);
-
-
-//         // Grab id of page (data is nested within this, so need for accessing values as cannot use ordinal numbers)
-//         $pageid = array_key_first($conv_data[1]['pages']);
-
-//         $url = $conv_data[1]['pages'][$pageid]['imageinfo'][0]['thumburl'];
-
-//         var_dump($url);
-
-//             print_r("URL IS" . $url);
-
-//         // array_push($urls, $url);
-
-//         // print_r($urls);
-
-//         // $url = $data['query']['pages'];
-
-//         // var_dump($url);
-
-
-//     }
-// }
-
 ?>
 
